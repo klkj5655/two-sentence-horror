@@ -3,7 +3,8 @@
 // Node 22, standard library only. The program writes the single entry
 // line to /output/entry.txt (or $MAKEFUN_OUTPUT_DIR/entry.txt when set).
 // The line itself is the whole entry: two sentences, the second one
-// turning the smart home's goodnight into something wrong.
+// turning the smart home's goodnight into something wrong. Output is
+// deterministic: the same line, the same file, every run.
 import { mkdirSync, writeFileSync } from 'node:fs';
 const LINE = "Every night, my smart home says \"Good night\" before I do. Last Tuesday, it said it to someone else.";
 const out = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
